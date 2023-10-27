@@ -11,19 +11,19 @@ namespace aplicacao_ds.Models
 
 
 
-        public int CodigoCli { get; set; }
+        public string CodigoCli { get; set; }
 
 
 
         [Display(Name = "Nome do Usuário")]
-        [RegularExpression(@"/^\s*$/}")]
+   
         public string NomeCliente { get; set; }
 
 
 
         [Display(Name = "Endereço")]
         [Required(ErrorMessage = "Digite um endereço")]
-        [RegularExpression(@"/^\s*$/}[A-Za-z][0-9]")]
+        [RegularExpression(@"[A-Za-z][0-9]")]
         public string EnderecoCli { get; set; }
 
         [Display(Name = "Email")]
@@ -33,19 +33,20 @@ namespace aplicacao_ds.Models
 
         [Display(Name = "CPF")]
         [Required(ErrorMessage = "Digite os 11 digitos do cpf")]
-        [RegularExpression(@"\[0-9]{0,11}")]
+        [RegularExpression(@"{0,11}")]
         public string CPFCli { get; set; }
 
 
         [Display(Name = "Data de Nascimento")]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         [Required(ErrorMessage = "Digite uma data de nascimento valida")]
         public DateTime DataNasc { get; set; }
 
 
         [Display(Name = "Telefone")]
         [Required(ErrorMessage = "Digite seu telefone de 11 digitos")]
-        [RegularExpression(@"\[0-9]{0,11}")]
-        public int TelefoneCli { get; set; }
+        [RegularExpression(@"{0,11}")]
+        public string TelefoneCli { get; set; }
 
 
 
